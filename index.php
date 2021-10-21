@@ -1,6 +1,5 @@
 <?php 
-require './database.php';
-
+require __DIR__ . '/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,18 +17,12 @@ require './database.php';
         <title>PHP Dischi</title>
     </head>
     <body>
-        <header>
-            <img src="./img/spotify-logo.png" alt="Spotify logo">
-        </header>
+        <?php include __DIR__ . '/partials/template/header.php'; ?>
+
         <main>
             <div class="container">
                 <?php foreach($database as $album) { ?>
-                    <div class="card">
-                        <img src="<?php echo $album['poster']; ?>" alt="<?php $album['title']; ?>">
-                        <h2><?php echo $album['title'] ?></h2>
-                        <p><?php echo $album['author']?></p>
-                        <p><?php echo $album['year']?></p>
-                    </div>
+                    <?php include __DIR__ . '/partials/template/card.php' ?>
                 <?php }; ?>
             </div>
         </main>

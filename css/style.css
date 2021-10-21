@@ -55,6 +55,7 @@ main {
     color: #fff;
     text-transform: uppercase;
     margin-block: 1rem;
+    font-size: 1.3em;
 }
 
 .card p {
