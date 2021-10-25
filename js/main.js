@@ -3,6 +3,7 @@ const app = new Vue({
 
     data: {
        albi: null,
+       genres: [],
        selectedGenre: ""
     },
 
@@ -27,11 +28,19 @@ const app = new Vue({
         axios.get('http://localhost/php/php-ajax-dischi/api/index.php')
         .then(response => {
             this.albi = response.data;
-        })
 
+            console.log(this.albi);
+
+            this.albi.forEach(element => {
+                if(!this.genres.includes(element.genre)) {
+                    this.genres.push(element.genre);
+                }
+
+                console.log(this.genres);
+            });
+        })
         .catch(function (error) {
             console.log(error);
         })
-    } 
-        
+    }
 });

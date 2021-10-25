@@ -18,10 +18,7 @@
                 <img src="./img/spotify-logo.png" alt="Spotify logo">
                 <select name="genre" v-model="selectedGenre" @change="filterGenre(selectedGenre)">
                     <option value="" selected>All</option>
-                    <option value="rock">Rock</option>
-                    <option value="pop">Pop</option>
-                    <option value="metal">Metal</option>
-                    <option value="jazz">Jazz</option>
+                    <option v-for="(element, index) in genres" :key="index" :value="element">{{element}}</option>
                 </select>
             </header>
 
